@@ -7,6 +7,8 @@ import {Delete, MoreHoriz, ThumbUpAlt} from "@material-ui/icons";
 const Post = ({post, setCurrentId}) => {
     const classes = useStyles()
 
+    const tags = post.tags.join().split(' ').map(tag => `#${tag} `)
+
     return (
         <Card className={classes.card} >
             <CardMedia className={classes.media} image={post.selectedFile} title={post.title} />
@@ -24,7 +26,7 @@ const Post = ({post, setCurrentId}) => {
                 </Button>
             </div>
             <div className={classes.details}>
-                <Typography variant={'body2'} color={'textSecondary'} > {post.tags.map(tag => `#${tag}`)} </Typography>
+                <Typography variant={'body2'} color={'textSecondary'} > {tags} </Typography>
             </div>
             <CardContent>
                 <Typography variant={'h5'} className={classes.title} gutterBottom > {post.message} </Typography>

@@ -9,7 +9,7 @@ const Form = ({currentId, setCurrentId}) => {
         creator: '',
         title: '',
         message: '',
-        tags: '',
+        tags: [],
         selectedFile: '',
     })
     const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
