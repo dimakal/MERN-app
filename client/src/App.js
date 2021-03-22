@@ -14,8 +14,9 @@ const App = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
+        debugger
         dispatch(getPosts())
-    }, [currentId, dispatch])
+    }, [dispatch])
 
     return (
         <Container maxWidth={'lg'}>

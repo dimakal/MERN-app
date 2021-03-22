@@ -7,6 +7,7 @@ import {Delete, MoreHoriz, ThumbUpAlt} from "@material-ui/icons";
 const Post = ({post, setCurrentId}) => {
     const classes = useStyles()
 
+    const id = post._id
     const tags = post.tags.join().split(' ').map(tag => `#${tag} `)
 
     return (
@@ -20,7 +21,7 @@ const Post = ({post, setCurrentId}) => {
                 <Button
                     style={{color: 'white'}}
                     size={'small'}
-                    onClick={() => setCurrentId(post._id)}
+                    onClick={() => setCurrentId(id)}
                 >
                     <MoreHoriz fontSize={'default'} />
                 </Button>
@@ -28,6 +29,7 @@ const Post = ({post, setCurrentId}) => {
             <div className={classes.details}>
                 <Typography variant={'body2'} color={'textSecondary'} > {tags} </Typography>
             </div>
+            <Typography variant={'h5'} className={classes.title} gutterBottom > {post.title} </Typography>
             <CardContent>
                 <Typography variant={'h5'} className={classes.title} gutterBottom > {post.message} </Typography>
             </CardContent>
