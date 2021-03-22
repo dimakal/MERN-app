@@ -14,7 +14,6 @@ const App = () => {
     const dispatch = useDispatch()
 
     useEffect(() => {
-        debugger
         dispatch(getPosts())
     }, [dispatch])
 
