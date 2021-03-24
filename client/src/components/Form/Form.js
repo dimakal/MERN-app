@@ -2,7 +2,8 @@ import React, {useEffect, useState} from "react"
 import useStyles from './styles'
 import {Button, Paper, TextField, Typography} from "@material-ui/core";
 import {useDispatch, useSelector} from "react-redux";
-import {createPost, updatePost} from "../redux/actions/posts";
+import {createPost, updatePost} from "../../redux/actions/posts";
+import {defaultImage} from "../../constants/defaultImage";
 
 const Form = ({currentId, setCurrentId}) => {
     const [postData, setPostData] = useState({
@@ -10,7 +11,7 @@ const Form = ({currentId, setCurrentId}) => {
         title: '',
         message: '',
         tags: [],
-        selectedFile: '',
+        selectedFile: defaultImage
     })
     const post = useSelector((state) => (currentId ? state.posts.find((message) => message._id === currentId) : null));
     const dispatch = useDispatch()
@@ -39,7 +40,7 @@ const Form = ({currentId, setCurrentId}) => {
             title: '',
             message: '',
             tags: [],
-            selectedFile: '',
+            selectedFile: defaultImage,
         })
     }
 

@@ -4,14 +4,14 @@ import {Button, Card, CardActions, CardContent, CardMedia, Typography} from "@ma
 import moment from "moment";
 import {Delete, MoreHoriz, ThumbUpAlt} from "@material-ui/icons";
 import {useDispatch} from "react-redux";
-import {deletePost, likePost} from "../../redux/actions/posts";
+import {deletePost, likePost} from "../../../redux/actions/posts";
 
 const Post = ({post, setCurrentId}) => {
     const classes = useStyles()
     const dispatch = useDispatch()
 
     const id = post._id
-    const tags = post.tags.join().split(' ').map(tag => `#${tag} `)
+    const tags = post.tags.length ? post.tags.join().split(' ').map(tag => `#${tag} `) : ''
 
     return (
         <Card className={classes.card} >
