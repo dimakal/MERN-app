@@ -17,6 +17,7 @@ app.use('/posts', postRoutes)
 const CONNECTION_URL = `mongodb+srv://dimakal:test@cluster0.lmkez.mongodb.net/myFirstDatabase`
 const PORT = process.env.PORT || 3011
 
+// mongoose.connect(process.env.CONNECTION_URL, {
 mongoose.connect(CONNECTION_URL, {
     useNewUrlParser: true,
     useUnifiedTopology: true
