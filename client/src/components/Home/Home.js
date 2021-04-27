@@ -1,6 +1,5 @@
 import React, {useEffect, useState} from 'react';
 import {Container, Grid, Grow} from "@material-ui/core";
-import Navbar from "../Navbar/Navbar";
 import Posts from "../Posts/Posts";
 import Form from "../Form/Form";
 import useStyles from "../../styles";
